@@ -1,0 +1,10 @@
+<div class="container py-5">
+  <h1>Angular NgRx Example</h1>
+  <hr class="my-5">
+  <h3>Counter value: {{ (currentValue$ | async)?.counter }}</h3>
+  <div class="btn-group">
+    <button (click)="increment()" class="btn btn-secondary">+1</button>
+    <button (click)="decrement()" class="btn btn-secondary">-1</button>
+    <button (click)="reset()" class="btn btn-secondary">0</button>
+  </div>
+</div>
