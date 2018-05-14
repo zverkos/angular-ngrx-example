@@ -4,29 +4,16 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { CounterModule } from './counter/counter.module';
-import { reducer } from './shared/reducers';
+import { reducers } from './shared/reducers';
 import { CounterPageComponent } from './counter/counter-page/counter-page.component';
 
 import { StoreModule } from '@ngrx/store';
-import { AppState, InternalStateType } from './app.service';
-import { APP_RESOLVER_PROVIDERS } from './app.resolver';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 const appRoutes: Routes  = [
   { path: 'counter', redirectTo: 'CounterPageComponent' },
   { path: '**', redirectTo: 'CounterPageComponent' }
 ];
-
-const APP_PROVIDERS = [
-  ...APP_RESOLVER_PROVIDERS,
-  AppState
-];
-
-type StoreType = {
-  state: InternalStateType,
-  restoreInputValues: () => void,
-  disposeOldHosts: () => void
-};
 
 @NgModule({
   declarations: [
@@ -36,7 +23,7 @@ type StoreType = {
     BrowserModule,
     RouterModule.forRoot(appRoutes),
     CounterModule,
-    StoreModule.forRoot(reducer),
+    StoreModule.forRoot(reducers),
     StoreDevtoolsModule.instrument({ maxAge: 50 })
   ],
   providers: [],
