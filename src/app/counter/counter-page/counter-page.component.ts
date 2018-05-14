@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { CounterState } from '../counter.models';
-import { CounterService } from '../counter.service';
+import { Counter } from '../../shared/models/counter.models';
+import { CounterService } from '../../shared/services/counter.service';
 
 @Component({
   selector: 'app-counter-page',
@@ -10,12 +10,16 @@ import { CounterService } from '../counter.service';
 })
 
 export class CounterPageComponent implements OnInit {
-  private currentValue$: Observable<CounterState>;
+  public currentValue$: Observable<Counter>;
 
   constructor(
     private counterService: CounterService
   ) {
     this.currentValue$ = counterService.getCurrentValue();
+  }
+
+  public default(): void {
+    this.counterService.default();
   }
 
   public increment(): void {

@@ -1,5 +1,5 @@
-import { CounterState } from './counter.models';
+import { Counter } from '../shared/models/counter.models';
 
-export const initialState: CounterState = {
+export const initialState: Counter = {
   counter: 10
 };

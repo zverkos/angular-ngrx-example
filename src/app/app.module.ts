@@ -4,7 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { CounterModule } from './counter/counter.module';
-import { counter } from "./counter/counter.reducer";
+import { reducer } from './shared/reducers';
 import { CounterPageComponent } from './counter/counter-page/counter-page.component';
 
 import { StoreModule } from '@ngrx/store';
@@ -36,7 +36,7 @@ type StoreType = {
     BrowserModule,
     RouterModule.forRoot(appRoutes),
     CounterModule,
-    StoreModule.forRoot({ counter }),
+    StoreModule.forRoot(reducer),
     StoreDevtoolsModule.instrument({ maxAge: 50 })
   ],
   providers: [],
