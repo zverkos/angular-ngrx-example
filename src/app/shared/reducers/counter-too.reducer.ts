@@ -1,13 +1,13 @@
 import { Counter } from '../models/counter.models';
 import { ActionReducer, Action } from '@ngrx/store';
-import * as counter from '../actions/counter.actions';
+import * as counter from '../actions/counter-too.actions';
 
 export interface State {
-  counter: number;
+  counterToo: number;
 }
 
 export const initialState: State = {
-  counter: 10
+  counterToo: 15
 };
 
 export function reducer (state = initialState, action: counter.Actions): State {
@@ -15,37 +15,37 @@ export function reducer (state = initialState, action: counter.Actions): State {
 
     case counter.DEFAULT: {
       return {
-        counter: 5
+        counterToo: 5
       };
     }
 
     case counter.INCREMENT: {
       return {
-        counter: state.counter + 1
+        counterToo: state.counterToo + 1
       };
     }
 
     case counter.DECREMENT: {
       return {
-        counter: state.counter - 1
+        counterToo: state.counterToo - 1
       };
     }
 
     case counter.RESET: {
       return {
-        counter: 0
+        counterToo: 0
       };
     }
 
     case counter.CURRENT: {
       return {
-        counter: state.counter
+        counterToo: state.counterToo
       };
     }
 
     default: {
       return {
-        counter: state.counter
+        counterToo: state.counterToo
       };
     }
   }

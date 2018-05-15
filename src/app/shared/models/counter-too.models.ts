@@ -1,3 +1,3 @@
 export interface CounterToo {
-  counter: number;
+  counterToo: number;
 }

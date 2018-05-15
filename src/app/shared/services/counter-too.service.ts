@@ -1,18 +1,18 @@
 import { Injectable } from '@angular/core';
-import { DefaultAction, IncrementAction, DecrementAction, ResetAction } from '../actions/counter.actions';
+import { DefaultAction, IncrementAction, DecrementAction, ResetAction } from '../actions/counter-too.actions';
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
-import { Counter } from '../models/counter.models';
+import { CounterToo } from '../models/counter-too.models';
 
 @Injectable()
 export class CounterTooService {
   public store$;
 
-  constructor(private store: Store<Counter>) {
-    this.store$ = this.store.select('counter');
+  constructor(private store: Store<CounterToo>) {
+    this.store$ = this.store.select('counterToo');
   }
 
-  public getCurrentValue(): Observable<Counter> {
+  public getCurrentValue(): Observable<CounterToo> {
     return this.store$;
   }
 
