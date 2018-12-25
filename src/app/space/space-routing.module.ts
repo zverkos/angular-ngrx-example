@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { CounterPageComponent } from './counter-page/counter-page.component';
+import {MegaComponent} from './mega/mega.component';
 
 const routes: Routes = [
-  {path: '', component: CounterPageComponent}
+  {path: '', component: MegaComponent}
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class CounterRoutingModule { }
+export class SpaceRoutingModule { }

@@ -5,14 +5,14 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { CounterModule } from './counter/counter.module';
 import { reducers } from './shared/reducers';
-import { CounterPageComponent } from './counter/counter-page/counter-page.component';
 
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 const appRoutes: Routes  = [
-  { path: 'counter', redirectTo: 'CounterPageComponent' },
-  { path: '**', redirectTo: 'CounterPageComponent' }
+  { path: 'space',   loadChildren: './space/space.module#SpaceModule' },
+  { path: 'counter', loadChildren: './counter/counter.module#CounterModule' },
+  { path: '**',      redirectTo: '/counter' }
 ];
 
 @NgModule({

@@ -6,11 +6,13 @@ import { CounterPageComponent } from './counter-page/counter-page.component';
 import { CounterService } from '../shared/services/counter.service';
 import { CounterTooService } from '../shared/services/counter-too.service';
 import { CounterTooComponent } from './counter-too/counter-too.component';
+import { CoreModule } from '../core/core.module';
 
 @NgModule({
   imports: [
     CommonModule,
-    CounterRoutingModule
+    CounterRoutingModule,
+    CoreModule
   ],
   declarations: [CounterPageComponent, CounterTooComponent],
   providers: [
