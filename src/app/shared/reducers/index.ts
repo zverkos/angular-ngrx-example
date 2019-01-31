@@ -1,7 +1,20 @@
 import { ActionReducer, ActionReducerMap } from '@ngrx/store';
+
+import { routerReducer } from '@ngrx/router-store';
+import { IAppState } from '../states/app.state';
+import { configReducers } from './config.redusers';
+import { userReducers } from './user.redusers';
+
+
 import * as fromCounter from './counter.reducer';
 import * as fromCounterToo from './counter-too.reducer';
 import { combineReducers } from '@ngrx/store';
+
+export const appReducers: ActionReducerMap<IAppState, any> = {
+  router: routerReducer,
+  users: userReducers,
+  config: configReducers
+}
 
 export interface State {
   counter: fromCounter.State;
