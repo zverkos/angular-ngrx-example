@@ -1,1 +1,9 @@
-<router-outlet></router-outlet>
+<nav class="navbar d-flex">
+  <a class="navbar-brand"
+     routerLink="/">
+    Angular - NGRX / {{ (config$ | async)?.adminName }}
+  </a>
+</nav>
+<div class="container app-container">
+  <router-outlet></router-outlet>
+</div>
