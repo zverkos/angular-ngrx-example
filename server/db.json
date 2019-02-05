@@ -1,0 +1,21 @@
+{
+  "posts": [
+    { "id": 1, "title": "json-server", "author": "typicode" },
+    { "id": 2, "title": "json", "author": "typicode" },
+    { "id": 3, "title": "server", "author": "typicode" },
+    { "id": 4, "title": "js", "author": "typicode" },
+    { "id": 5, "title": "jsx", "author": "typicode" }
+  ],
+  "comments": [
+    { "id": 1, "body": "some", "postId": 1 },
+    { "id": 2, "body": "comment", "postId": 1 },
+    { "id": 3, "body": "some shit", "postId": 2 },
+    { "id": 4, "body": "awesome", "postId": 3 },
+    { "id": 5, "body": "yo", "postId": 4 }
+  ],
+  "users": [
+    { "id": 1, "login": "admin", "password":"qwerty"},
+    { "id": 2, "login": "qwe", "password":"qwerty"},
+    { "id": 3, "login": "asd", "password":"qwerty"}
+  ]
+}

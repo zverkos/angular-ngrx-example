@@ -12,9 +12,9 @@ import {selectConfig} from './shared/store/selectors/config.selectors';
 })
 export class AppComponent implements OnInit {
   title = 'app';
-  config$ = this._store.pipe(select(selectConfig));
+  // config$ = this._store.pipe(select(selectConfig));
   constructor(private _store: Store<IAppState>) {}
   ngOnInit() {
-    this._store.dispatch(new GetConfig());
+    // this._store.dispatch(new GetConfig());
   }
 }
