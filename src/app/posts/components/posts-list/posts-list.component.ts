@@ -1,4 +1,4 @@
-import {Component, OnInit, Input} from '@angular/core';
+import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 import {Post} from '../../../shared/sdk/models/post.models';
 
 @Component({
@@ -8,6 +8,7 @@ import {Post} from '../../../shared/sdk/models/post.models';
 })
 export class PostsListComponent implements OnInit {
   @Input() posts: Post[];
+  @Output() id: EventEmitter<number> = new EventEmitter();
 
   constructor() {
   }

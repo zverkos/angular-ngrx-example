@@ -13,6 +13,12 @@ export const postReducers = (
         posts: action.payload
       };
     }
+    case PostActionsTypes.GET_POST_BY_ID_SUCCESS: {
+      return {
+        ...state,
+        selectedPost: action.payload
+      };
+    }
     default: return state;
   }
 };

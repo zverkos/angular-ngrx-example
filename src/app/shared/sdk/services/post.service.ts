@@ -24,8 +24,10 @@ export class PostApi {
     // will use this.http.post()
   }
 
-  public getPostById(postId: number) {
-    // will use this.http.get()
+  public getPostById(postId: number): Observable<any>  {
+    return this.http
+      .get<Post>(API_URL + '/posts/' + postId)
+      .pipe(catchError((error: any) => of(`Bad Promise: ${error}`)));
   }
 
   public updatePost(post: Post) {

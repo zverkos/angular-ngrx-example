@@ -24,6 +24,18 @@ export class GetAllPostsSuccess implements Action {
   constructor(public payload: Post[]) {}
 }
 
+export class GetPostById implements Action {
+  public readonly type = PostActionsTypes.GET_POST_BY_ID;
+  constructor(public payload: number) {}
+}
+
+export class GetPostByIdSuccess implements Action {
+  public readonly type = PostActionsTypes.GET_POST_BY_ID_SUCCESS;
+  constructor(public payload: Post) {}
+}
+
 export type PostActions =
   | GetAllPosts
-  | GetAllPostsSuccess;
+  | GetAllPostsSuccess
+  | GetPostById
+  | GetPostByIdSuccess;

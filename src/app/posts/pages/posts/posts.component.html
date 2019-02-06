@@ -1,2 +1,2 @@
-<app-posts-list [posts]="posts$ | async"></app-posts-list>
+<app-posts-list [posts]="posts$ | async" (id)="openPostById($event)"></app-posts-list>
 

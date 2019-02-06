@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
 import {Store, select} from '@ngrx/store';
 import {selectPostsList} from '../../../shared/store/selectors/post.selectors';
 import {IAppState} from '../../../shared/store/states/app.state';
@@ -12,13 +13,17 @@ export class PostsComponent implements OnInit {
   posts$ = this._store.pipe(select(selectPostsList));
 
   constructor(
-    private _store: Store<IAppState>
+    private _store: Store<IAppState>,
+    private router: Router
   ) {
   }
 
   ngOnInit() {
     this._store.dispatch(new GetAllPosts());
-    // this.posts$.subscribe(console.log);
+  }
+
+  openPostById(id) {
+    this.router.navigate(['/posts/', id]);
   }
 
 }
