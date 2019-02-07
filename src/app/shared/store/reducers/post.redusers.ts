@@ -16,9 +16,10 @@ export const postReducers = (
     case PostActionsTypes.GET_POST_BY_ID_SUCCESS: {
       return {
         ...state,
-        selectedPost: action.payload
+        selectedId: null
       };
     }
-    default: return state;
+    default:
+      return state;
   }
 };

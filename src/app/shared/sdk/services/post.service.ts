@@ -1,9 +1,10 @@
-import {Injectable, Inject, Optional} from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Post} from '../models/post.models';
 import {environment} from '../../../../environments/environment';
-import {Observable, of, Subject} from 'rxjs';
-import { map, catchError } from 'rxjs/operators';
+import {Observable, of} from 'rxjs';
+import {catchError} from 'rxjs/operators';
+import 'rxjs-compat/add/operator/map';
 
 const API_URL = environment.apiUrl;
 
@@ -16,15 +17,17 @@ export class PostApi {
 
   public getAllPosts(): Observable<any> {
     return this.http
-      .get<Post>(API_URL + '/posts')
-      .pipe(catchError((error: any) => of(`Bad Promise: ${error}`)));
+      .get<Post[]>(API_URL + '/posts')
+      .pipe(
+        catchError((error: any) => of(`Bad Promise: ${error}`))
+      );
   }
 
   public createPost(post: Post) {
     // will use this.http.post()
   }
 
-  public getPostById(postId: number): Observable<any>  {
+  public getPostById(postId: number): Observable<any> {
     return this.http
       .get<Post>(API_URL + '/posts/' + postId)
       .pipe(catchError((error: any) => of(`Bad Promise: ${error}`)));
