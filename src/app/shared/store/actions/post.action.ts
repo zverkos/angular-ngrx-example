@@ -1,6 +1,6 @@
 import {Action} from '@ngrx/store';
 
-import {Post} from '../../sdk/models/post.models';
+import {Post} from '../../sdk/models';
 
 export enum PostActionsTypes {
   GET_ALL_POSTS = '[Post] Get All Posts',
@@ -24,6 +24,16 @@ export class GetAllPostsSuccess implements Action {
   constructor(public payload: Post[]) {}
 }
 
+export class CreatePost implements Action {
+  public readonly type = PostActionsTypes.CREATE_POST;
+  constructor(public payload: Post) {}
+}
+
+export class CreatePostSuccess implements Action {
+  public readonly type = PostActionsTypes.CREATE_POST_SUCCESS;
+  constructor(public payload: Post) {}
+}
+
 export class GetPostById implements Action {
   public readonly type = PostActionsTypes.GET_POST_BY_ID;
   constructor(public payload: number) {}
@@ -37,5 +47,7 @@ export class GetPostByIdSuccess implements Action {
 export type PostActions =
   | GetAllPosts
   | GetAllPostsSuccess
+  | CreatePost
+  | CreatePostSuccess
   | GetPostById
   | GetPostByIdSuccess;

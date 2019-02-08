@@ -5,6 +5,7 @@ import {PostComponent} from './pages/post/post.component';
 
 const routes: Routes = [
   {path: '', component: PostsComponent},
+  // {path: ':id/edit', component: PostComponent},
   {path: ':id', component: PostComponent}
 ];
 

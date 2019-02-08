@@ -7,7 +7,9 @@ import {
   GetAllPosts,
   PostActionsTypes,
   GetPostById,
-  GetPostByIdSuccess
+  GetPostByIdSuccess,
+  CreatePost,
+  CreatePostSuccess
 } from '../actions/post.action';
 import {PostApi} from '../../sdk/services/post.service';
 import {select, Store} from '@ngrx/store';
@@ -16,6 +18,7 @@ import {selectPostById, selectPostsList} from '../selectors/post.selectors';
 import {Post} from '../../sdk/models/post.models';
 import 'rxjs-compat/add/operator/skip';
 import 'rxjs-compat/add/operator/takeUntil';
+import 'rxjs-compat/add/operator/map';
 
 @Injectable()
 export class PostEffects {
@@ -31,7 +34,7 @@ export class PostEffects {
     ofType<GetAllPosts>(PostActionsTypes.GET_ALL_POSTS),
     switchMap(() =>
       this._postApi.getAllPosts().pipe(
-        map(posts => new GetAllPostsSuccess(posts))
+        map(payload => new GetAllPostsSuccess(payload))
       )
     )
   );
@@ -40,15 +43,22 @@ export class PostEffects {
   //   ofType<GetPostById>(PostActionsTypes.GET_POST_BY_ID),
   //   map(action => action.payload)
   // );
+
+  @Effect()
+  createPost$ = this._actions$.pipe(
+    ofType<CreatePost>(PostActionsTypes.CREATE_POST),
+    map(action => action.payload),
+    switchMap((post: Post) =>
+      this._postApi.createPost(post)
+        .map(payload => new CreatePostSuccess(payload))));
+
   @Effect()
   getPost$ = this._actions$.pipe(
     ofType<GetPostById>(PostActionsTypes.GET_POST_BY_ID),
     map(action => action.payload),
     switchMap(id => {
-      const nextPost$ = this._actions$.ofType(PostActionsTypes.GET_POST_BY_ID);
-      return this._postApi.getPostById(id)
-        .takeUntil(nextPost$)
-        .map(post => new GetPostByIdSuccess(post));
+      return this._postApi.getPostById(id).pipe(
+        map(payload => new GetPostByIdSuccess(payload)));
     })
   );
   // @Effect()

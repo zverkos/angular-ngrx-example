@@ -1,11 +1,18 @@
-import {Post} from '../../sdk/models/post.models';
+import {Post} from '../../sdk/models';
 
 export interface IPostState {
+  ids: number[];
+  // posts: { [id: number]: Post };
   posts: Post[];
+  selectedPost: Post;
   selectedId: number;
+  newPost: Post;
 }
 
 export const initialPostState: IPostState = {
+  ids: null,
   posts: null,
-  selectedId: null
+  selectedPost: null,
+  selectedId: null,
+  newPost: null
 };

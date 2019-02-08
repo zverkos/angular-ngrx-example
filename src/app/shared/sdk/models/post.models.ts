@@ -1,7 +1,7 @@
 export interface IPost {
-  'id': number;
-  'title': string;
-  'author': number;
+  'id'?: number;
+  'title'?: string;
+  'author'?: number;
 }
 
 export class Post implements IPost {

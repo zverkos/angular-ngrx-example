@@ -1,0 +1,4 @@
+<div class="container d-flex mb-5">
+  <input class="form-control form-control-sm mr-5" [formControl]="newPostText">
+  <button class="btn btn-sm btn-primary" (click)="sendPost.emit(newPostText.value)">Создать</button>
+</div>

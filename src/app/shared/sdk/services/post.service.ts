@@ -23,8 +23,12 @@ export class PostApi {
       );
   }
 
-  public createPost(post: Post) {
-    // will use this.http.post()
+  public createPost(post: Post): Observable<any> {
+    return this.http
+      .post<Post>(API_URL + '/posts/', post)
+      .pipe(
+        catchError((error: any) => of(`Bad Promise: ${error}`))
+      );
   }
 
   public getPostById(postId: number): Observable<any> {

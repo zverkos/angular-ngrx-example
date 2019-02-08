@@ -4,7 +4,6 @@ import {selectPostById} from '../../../shared/store/selectors/post.selectors';
 import {IAppState} from '../../../shared/store/states/app.state';
 import {GetPostById} from '../../../shared/store/actions/post.action';
 import {ActivatedRoute} from '@angular/router';
-import {skip} from 'rxjs/operators';
 
 @Component({
   selector: 'app-post',
@@ -13,8 +12,7 @@ import {skip} from 'rxjs/operators';
 })
 export class PostComponent implements OnInit {
   post$ = this._store.pipe(
-    select(selectPostById),
-    // skip(1)
+    select(selectPostById)
   );
   constructor(
     private _store: Store<IAppState>,
@@ -24,5 +22,6 @@ export class PostComponent implements OnInit {
 
   ngOnInit() {
     this._store.dispatch(new GetPostById(this._route.snapshot.params.id));
+    // console.log(this._route.firstChild.params);
   }
 }

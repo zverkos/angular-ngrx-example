@@ -1,2 +1,3 @@
+<app-create-post (sendPost)="createPost($event)"></app-create-post>
 <app-posts-list [posts]="posts$ | async" (id)="openPostById($event)"></app-posts-list>
 
