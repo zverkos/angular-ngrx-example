@@ -1,21 +1,98 @@
 {
   "posts": [
-    { "id": 1, "title": "json-server", "author": "typicode" },
-    { "id": 2, "title": "json", "author": "typicode" },
-    { "id": 3, "title": "server", "author": "typicode" },
-    { "id": 4, "title": "js", "author": "typicode" },
-    { "id": 5, "title": "jsx", "author": "typicode" }
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    },
+    {
+      "id": 2,
+      "title": "json",
+      "author": "typicode"
+    },
+    {
+      "id": 3,
+      "title": "server",
+      "author": "typicode"
+    },
+    {
+      "id": 4,
+      "title": "js",
+      "author": "typicode"
+    },
+    {
+      "id": 5,
+      "title": "jsx",
+      "author": "typicode"
+    },
+    {
+      "title": "423",
+      "author": null,
+      "id": 6
+    },
+    {
+      "title": "asdds",
+      "author": null,
+      "id": 7
+    },
+    {
+      "title": "fdsfsdf",
+      "author": null,
+      "id": 8
+    },
+    {
+      "title": "ываывавыа",
+      "author": null,
+      "id": 9
+    },
+    {
+      "id": 10,
+      "title": "1222",
+      "author": null
+    }
   ],
   "comments": [
-    { "id": 1, "body": "some", "postId": 1 },
-    { "id": 2, "body": "comment", "postId": 1 },
-    { "id": 3, "body": "some shit", "postId": 2 },
-    { "id": 4, "body": "awesome", "postId": 3 },
-    { "id": 5, "body": "yo", "postId": 4 }
+    {
+      "id": 1,
+      "body": "some",
+      "postId": 1
+    },
+    {
+      "id": 2,
+      "body": "comment",
+      "postId": 1
+    },
+    {
+      "id": 3,
+      "body": "some shit",
+      "postId": 2
+    },
+    {
+      "id": 4,
+      "body": "awesome",
+      "postId": 3
+    },
+    {
+      "id": 5,
+      "body": "yo",
+      "postId": 4
+    }
   ],
   "users": [
-    { "id": 1, "login": "admin", "password":"qwerty"},
-    { "id": 2, "login": "qwe", "password":"qwerty"},
-    { "id": 3, "login": "asd", "password":"qwerty"}
+    {
+      "id": 1,
+      "login": "admin",
+      "password": "qwerty"
+    },
+    {
+      "id": 2,
+      "login": "qwe",
+      "password": "qwerty"
+    },
+    {
+      "id": 3,
+      "login": "asd",
+      "password": "qwerty"
+    }
   ]
 }

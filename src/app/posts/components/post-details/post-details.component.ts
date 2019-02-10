@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Post} from '../../../shared/sdk/models/post.models';
 
 @Component({
@@ -8,6 +8,7 @@ import {Post} from '../../../shared/sdk/models/post.models';
 })
 export class PostDetailsComponent implements OnInit {
   @Input() post: Post;
+  @Output() editPost: EventEmitter<string> = new EventEmitter();
   constructor() { }
 
   ngOnInit() {

@@ -1,3 +1,5 @@
 <ng-container *ngIf="post && post.id">
   <div>{{post.id}}</div>
+  <div>{{post.title}} <button class="btn btn-sm btn-outline-primary" (click)="editPost.emit(post.title)">Edit</button></div>
+  <div>{{post.author}}</div>
 </ng-container>

@@ -37,8 +37,10 @@ export class PostApi {
       .pipe(catchError((error: any) => of(`Bad Promise: ${error}`)));
   }
 
-  public updatePost(post: Post) {
-    // will use this.http.put()
+  public updatePost(post: Post): Observable<any> {
+    return this.http
+      .put<Post>(API_URL + '/posts/' + post.id, post)
+      .pipe(catchError((error: any) => of(`Bad Promise: ${error}`)));
   }
 
   public deletePostById(postId: number) {

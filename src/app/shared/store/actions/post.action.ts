@@ -44,10 +44,22 @@ export class GetPostByIdSuccess implements Action {
   constructor(public payload: Post) {}
 }
 
+export class UpdatePost implements Action {
+  public readonly type = PostActionsTypes.UPDATE_POST;
+  constructor(public payload: Post) {}
+}
+
+export class UpdatePostSuccess implements Action {
+  public readonly type = PostActionsTypes.UPDATE_POST_SUCCESS;
+  constructor(public payload: Post) {}
+}
+
 export type PostActions =
   | GetAllPosts
   | GetAllPostsSuccess
   | CreatePost
   | CreatePostSuccess
+  | UpdatePost
+  | UpdatePostSuccess
   | GetPostById
   | GetPostByIdSuccess;
